@@ -4,14 +4,14 @@
     "C:\\Users\\giovanni.previatti\\Projetos\\Outros\\dotnet-api-with-keycloak\\src\\tests\\tests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\giovanni.previatti\\Projetos\\Outros\\dotnet-api-with-keycloak\\src\\tests\\tests.csproj": {
+    "C:\\Users\\giovanni.previatti\\Projetos\\Outros\\dotnet-api-with-keycloak\\src\\api\\api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\giovanni.previatti\\Projetos\\Outros\\dotnet-api-with-keycloak\\src\\tests\\tests.csproj",
-        "projectName": "tests",
-        "projectPath": "C:\\Users\\giovanni.previatti\\Projetos\\Outros\\dotnet-api-with-keycloak\\src\\tests\\tests.csproj",
+        "projectUniqueName": "C:\\Users\\giovanni.previatti\\Projetos\\Outros\\dotnet-api-with-keycloak\\src\\api\\api.csproj",
+        "projectName": "api",
+        "projectPath": "C:\\Users\\giovanni.previatti\\Projetos\\Outros\\dotnet-api-with-keycloak\\src\\api\\api.csproj",
         "packagesPath": "C:\\Users\\giovanni.previatti\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\giovanni.previatti\\Projetos\\Outros\\dotnet-api-with-keycloak\\src\\tests\\obj\\",
+        "outputPath": "C:\\Users\\giovanni.previatti\\Projetos\\Outros\\dotnet-api-with-keycloak\\src\\api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\giovanni.previatti\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -42,9 +42,107 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "IdentityModel.AspNetCore": {
+              "target": "Package",
+              "version": "[4.3.0, )"
+            },
+            "Keycloak.AuthServices.Authentication": {
+              "target": "Package",
+              "version": "[1.2.1, )"
+            },
+            "Keycloak.AuthServices.Authorization": {
+              "target": "Package",
+              "version": "[1.2.1, )"
+            },
+            "Microsoft.AspNetCore.OpenApi": {
+              "target": "Package",
+              "version": "[7.0.1, )"
+            },
+            "Refit.HttpClientFactory": {
+              "target": "Package",
+              "version": "[6.3.2, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.4.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\giovanni.previatti\\Projetos\\Outros\\dotnet-api-with-keycloak\\src\\tests\\tests.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\giovanni.previatti\\Projetos\\Outros\\dotnet-api-with-keycloak\\src\\tests\\tests.csproj",
+        "projectName": "tests",
+        "projectPath": "C:\\Users\\giovanni.previatti\\Projetos\\Outros\\dotnet-api-with-keycloak\\src\\tests\\tests.csproj",
+        "packagesPath": "C:\\Users\\giovanni.previatti\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\giovanni.previatti\\Projetos\\Outros\\dotnet-api-with-keycloak\\src\\tests\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\giovanni.previatti\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "http://nexus.viavarejo.com.br/repository/b2b-nuget/": {},
+          "http://nuget.cnova.com/nuget/": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "C:\\Users\\giovanni.previatti\\Projetos\\Outros\\dotnet-api-with-keycloak\\src\\api\\api.csproj": {
+                "projectPath": "C:\\Users\\giovanni.previatti\\Projetos\\Outros\\dotnet-api-with-keycloak\\src\\api\\api.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Mvc.Testing": {
+              "target": "Package",
+              "version": "[7.0.1, )"
+            },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
               "version": "[17.3.2, )"
+            },
+            "RestSharp": {
+              "target": "Package",
+              "version": "[108.0.3, )"
             },
             "coverlet.collector": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
