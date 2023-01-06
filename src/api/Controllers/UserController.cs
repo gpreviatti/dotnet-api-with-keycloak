@@ -1,9 +1,10 @@
-using System.Security.Claims;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace api.Controllers;
 
 [ApiController]
+[Authorize]
 [Route("[controller]")]
 public class UserController : BaseController
 {
