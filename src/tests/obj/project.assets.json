@@ -2948,11 +2948,11 @@
         "dependencies": {
           "Application": "1.0.0",
           "IdentityModel.AspNetCore": "4.3.0",
+          "Infrastructure.Http": "1.0.0",
           "Keycloak.AuthServices.Authentication": "1.2.1",
           "Keycloak.AuthServices.Authorization": "1.2.1",
           "Microsoft.AspNetCore.OpenApi": "7.0.1",
           "Refit.HttpClientFactory": "6.3.2",
-          "RestSharp": "108.0.3",
           "Swashbuckle.AspNetCore": "6.4.0"
         },
         "compile": {
@@ -2976,6 +2976,22 @@
         },
         "runtime": {
           "bin/placeholder/Application.dll": {}
+        }
+      },
+      "Infrastructure.Http/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Keycloak.AuthServices.Authentication": "1.2.1",
+          "Keycloak.AuthServices.Authorization": "1.2.1",
+          "Newtonsoft.Json": "9.0.1",
+          "RestSharp": "108.0.3"
+        },
+        "compile": {
+          "bin/placeholder/Infrastructure.Http.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Infrastructure.Http.dll": {}
         }
       }
     }
@@ -9034,6 +9050,11 @@
       "type": "project",
       "path": "../Application/Application.csproj",
       "msbuildProject": "../Application/Application.csproj"
+    },
+    "Infrastructure.Http/1.0.0": {
+      "type": "project",
+      "path": "../Infrastructure.Http/Infrastructure.Http.csproj",
+      "msbuildProject": "../Infrastructure.Http/Infrastructure.Http.csproj"
     }
   },
   "projectFileDependencyGroups": {

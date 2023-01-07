@@ -1,30 +1,31 @@
-using Newtonsoft.Json;
+using System.Runtime.Serialization;
 
 namespace Application.Messages;
 
+[Serializable]
 public class AuthenticationResponse
 {
-    [JsonProperty("access_token")]
+    [DataMember]
     public string? AccessToken { get; set; }
 
-    [JsonProperty("expires_in")]
+    [DataMember]
     public int ExpiresIn { get; set; }
 
-    [JsonProperty("refresh_expires_in")]
+    [DataMember]
     public int RefreshExpiresIn { get; set; }
 
-    [JsonProperty("refresh_token")]
+    [DataMember]
     public string? RefreshToken { get; set; }
 
-    [JsonProperty("token_type")]
+    [DataMember]
     public string? TokenType { get; set; }
 
-    [JsonProperty("notbeforepolicy")]
+    [DataMember]
     public int NotBeforePolicy { get; set; }
 
-    [JsonProperty("session_state")]
+    [DataMember]
     public string? SessionState { get; set; }
 
-    [JsonProperty("scope")]
+    [DataMember]
     public string? Scope { get; set; }
 }

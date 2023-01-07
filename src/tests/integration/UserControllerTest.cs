@@ -9,7 +9,7 @@ public class UserControllerTest : IntegrationTestBaseFixture
 
     public UserControllerTest(WebApplicationFactory<Program> factory) : base(factory) { }
 
-    [Fact]
+    [Fact(DisplayName = nameof(Should_Get_With_Unauthorized))]
     public async Task Should_Get_With_Unauthorized()
     {
         _client.DefaultRequestHeaders.Clear();
@@ -21,7 +21,7 @@ public class UserControllerTest : IntegrationTestBaseFixture
         Assert.Equal(HttpStatusCode.Unauthorized, response.StatusCode);
     }
 
-    [Theory]
+    [Theory(DisplayName = nameof(Should_Get_With_Success))]
     [InlineData("giovanni", "Change@Me")]
     [InlineData("joao", "Change@Me")]
     public async Task Should_Get_With_Success(string userName, string password)
@@ -35,6 +35,6 @@ public class UserControllerTest : IntegrationTestBaseFixture
 
 
         Assert.Equal(HttpStatusCode.OK, response.StatusCode);
-        Assert.True(content.Contains(userName));
+        Assert.Contains(userName, content);
     }
 }

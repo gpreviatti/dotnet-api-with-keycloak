@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "lrzmXGlsPUXPaiPV0i+VmTIf9Cuc6VFb2NPAoQtu/qNI8dBWAQoHJTpxAgDCkaU/3twZ3MzUR8Oa6y2v8wSMeA==",
+  "dgSpecHash": "OSWrO7GghuoCg9LDvcX8YznQyJ6Y8CJHreFvLg1aGMIEhqHM5NIoksEMhRphJXz6w02op91MDlXF4G0+u1gE2Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\giovanni.previatti\\Projetos\\Outros\\dotnet-api-with-keycloak\\src\\tests\\Tests.csproj",
   "expectedPackageFiles": [

@@ -1,8 +1,7 @@
 using Application.Messages;
+using Infrastructure.Http.Contracts;
 using Keycloak.AuthServices.Authentication;
 using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json;
-using RestSharp;
 
 namespace Api.Controllers;
 
@@ -11,39 +10,31 @@ namespace Api.Controllers;
 public class AuthenticationController : ControllerBase
 {
     protected readonly KeycloakAuthenticationOptions _keycloakAuthenticationOptions;
+    private readonly IKeycloakRepository _keycloakRepository;
 
-    public AuthenticationController(IConfiguration configuration)
+    public AuthenticationController(IKeycloakRepository keycloakRepository)
     {
-        if (configuration != null)
-        {
-            _keycloakAuthenticationOptions = configuration
-                .GetSection(KeycloakAuthenticationOptions.Section)
-                .Get<KeycloakAuthenticationOptions>()!;
-        }
+        _keycloakRepository = keycloakRepository;
     }
 
     [HttpPost("login")]
     public async Task<IActionResult> Login([FromBody] AuthenticationRequest request)
     {
-        var client = new RestClient();
-        var restRequest = new RestRequest(
-            $"{_keycloakAuthenticationOptions.AuthServerUrl}/realms/{_keycloakAuthenticationOptions.Realm}/protocol/openid-connect/token",
-            Method.Post
-        ) { Timeout = -1 };
+        var response = await _keycloakRepository.LoginAsync(request.UserName, request.Password);
 
-        restRequest.AddParameter("grant_type", "password");
-        restRequest.AddParameter("client_id", _keycloakAuthenticationOptions.Resource);
-        restRequest.AddParameter("username", request.UserName);
-        restRequest.AddParameter("password", request.Password);
-        restRequest.AddParameter("client_secret", _keycloakAuthenticationOptions.Credentials.Secret);
-
-        var response = await client.ExecuteAsync(restRequest);
-
-        if (!response.IsSuccessful || response.ContentLength.Equals(0) || response.Content == null)
+        if (response is null)
             return BadRequest("User not found");
 
-        var authenticationResponse = JsonConvert.DeserializeObject<AuthenticationResponse>(response.Content);
-
-        return Ok(authenticationResponse);
+        return Ok(new AuthenticationResponse
+        {
+            AccessToken = response.access_token,
+            ExpiresIn= response.expires_in,
+            NotBeforePolicy = response.notbeforepolicy,
+            RefreshExpiresIn= response.refresh_expires_in,
+            RefreshToken= response.refresh_token,
+            Scope= response.scope,
+            SessionState= response.session_state,
+            TokenType = response.token_type
+        });
     }
 }

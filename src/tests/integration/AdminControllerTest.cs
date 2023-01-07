@@ -9,7 +9,7 @@ public class AdminControllerTest : IntegrationTestBaseFixture
 
     public AdminControllerTest(WebApplicationFactory<Program> factory) : base(factory) { }
 
-    [Fact]
+    [Fact(DisplayName = nameof(Should_Get_With_Unauthorized))]
     public async Task Should_Get_With_Unauthorized()
     {
         _client.DefaultRequestHeaders.Clear();
@@ -21,7 +21,7 @@ public class AdminControllerTest : IntegrationTestBaseFixture
         Assert.Equal(HttpStatusCode.Unauthorized, response.StatusCode);
     }
 
-    [Fact]
+    [Fact(DisplayName = nameof(Should_Get_With_Success))]
     public async Task Should_Get_With_Success()
     {
         var authorization = await GetAuthorization("giovanni", "Change@Me");
@@ -36,7 +36,7 @@ public class AdminControllerTest : IntegrationTestBaseFixture
         Assert.True(content.Contains("giovanni"));
     }
 
-    [Fact]
+    [Fact(DisplayName = nameof(Should_Not_Get_With_Success))]
     public async Task Should_Not_Get_With_Success()
     {
         var authorization = await GetAuthorization("joao", "Change@Me");

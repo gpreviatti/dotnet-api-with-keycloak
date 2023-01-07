@@ -3,7 +3,7 @@ using Keycloak.AuthServices.Authentication;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
-using RestSharp;
+using System.Text;
 
 namespace Tests.Integration;
 
@@ -32,24 +32,19 @@ public abstract class IntegrationTestBaseFixture : IClassFixture<WebApplicationF
 
     public async Task<AuthenticationResponse?> GetAuthorization(string username, string password)
     {
-        var client = new RestClient();
-        var request = new RestRequest(
-            $"{_keycloakAuthenticationOptions.AuthServerUrl}/realms/{_keycloakAuthenticationOptions.Realm}/protocol/openid-connect/token",
-            Method.Post
-        );
-        request.Timeout = -1;
+        _client.DefaultRequestHeaders.Clear();
+        var request = new AuthenticationRequest
+        {
+            UserName = username,
+            Password = password
+        };
+        var json = JsonConvert.SerializeObject(request);
+        var contentRequest = new StringContent(json, Encoding.UTF8, "application/json");
 
-        request.AddParameter("grant_type", "password");
-        request.AddParameter("client_id", _keycloakAuthenticationOptions.Resource);
-        request.AddParameter("username", username);
-        request.AddParameter("password", password);
-        request.AddParameter("client_secret", _keycloakAuthenticationOptions.Credentials.Secret);
+        var response = await _client.PostAsync("authentication/login", contentRequest);
 
-        var response = await client.ExecuteAsync(request);
+        var content = await response.Content.ReadAsStringAsync();
 
-        if (!response.IsSuccessful || response.ContentLength.Equals(0) || response.Content == null)
-            return null;
-
-        return JsonConvert.DeserializeObject<AuthenticationResponse>(response.Content);
+        return JsonConvert.DeserializeObject<AuthenticationResponse>(content);
     }
 }
