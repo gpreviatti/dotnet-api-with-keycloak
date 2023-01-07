@@ -1,11 +1,11 @@
 using Keycloak.AuthServices.Authentication;
 using Keycloak.AuthServices.Authorization;
 
-namespace api.Extensions;
+namespace Api.Extensions;
 
 public static class KeycloakExtensions
 {
-    public static void AddKeycloakAuthenticationExtension(
+    public static IServiceCollection AddKeycloakAuthenticationExtension(
         this IServiceCollection services,
         IConfiguration configuration
     )
@@ -16,5 +16,7 @@ public static class KeycloakExtensions
             b.RequireRealmRoles("admin");
         }));
         services.AddKeycloakAuthorization(configuration);
+
+        return services;
     }
 }

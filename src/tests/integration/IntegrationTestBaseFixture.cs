@@ -1,55 +1,55 @@
+using Application.Messages;
 using Keycloak.AuthServices.Authentication;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
 using RestSharp;
 
-namespace tests.integration
+namespace Tests.Integration;
+
+public abstract class IntegrationTestBaseFixture : IClassFixture<WebApplicationFactory<Program>>
 {
-    public abstract class IntegrationTestBaseFixture : IClassFixture<WebApplicationFactory<Program>>
+    protected readonly HttpClient _client;
+    protected readonly IConfiguration _configuration;
+    protected readonly KeycloakAuthenticationOptions _keycloakAuthenticationOptions;
+
+    public IntegrationTestBaseFixture(WebApplicationFactory<Program> factory)
     {
-        protected readonly HttpClient _client;
-        protected readonly IConfiguration _configuration;
-        protected readonly KeycloakAuthenticationOptions _keycloakAuthenticationOptions;
+        _configuration = new ConfigurationBuilder()
+            .SetBasePath(Directory.GetCurrentDirectory())
+            .AddJsonFile($"appsettings.json")
+            .Build();
 
-        public IntegrationTestBaseFixture(WebApplicationFactory<Program> factory)
+        if (_configuration != null)
         {
-            _configuration = new ConfigurationBuilder()
-                .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile($"appsettings.json")
-                .Build();
-
-            if (_configuration != null)
-            {
-                _keycloakAuthenticationOptions = _configuration
-                    .GetSection(KeycloakAuthenticationOptions.Section)
-                    .Get<KeycloakAuthenticationOptions>()!;
-            }
-
-            _client = factory.CreateClient();
+            _keycloakAuthenticationOptions = _configuration
+                .GetSection(KeycloakAuthenticationOptions.Section)
+                .Get<KeycloakAuthenticationOptions>()!;
         }
 
-        public async Task<AuthenticationResponse?> GetAuthorization(string username, string password)
-        {
-            var client = new RestClient();
-            var request = new RestRequest(
-                $"{_keycloakAuthenticationOptions.AuthServerUrl}/realms/{_keycloakAuthenticationOptions.Realm}/protocol/openid-connect/token",
-                Method.Post
-            );
-            request.Timeout = -1;
+        _client = factory.CreateClient();
+    }
 
-            request.AddParameter("grant_type", "password");
-            request.AddParameter("client_id", _keycloakAuthenticationOptions.Resource);
-            request.AddParameter("username", username);
-            request.AddParameter("password", password);
-            request.AddParameter("client_secret", _keycloakAuthenticationOptions.Credentials.Secret);
+    public async Task<AuthenticationResponse?> GetAuthorization(string username, string password)
+    {
+        var client = new RestClient();
+        var request = new RestRequest(
+            $"{_keycloakAuthenticationOptions.AuthServerUrl}/realms/{_keycloakAuthenticationOptions.Realm}/protocol/openid-connect/token",
+            Method.Post
+        );
+        request.Timeout = -1;
 
-            var response = await client.ExecuteAsync(request);
+        request.AddParameter("grant_type", "password");
+        request.AddParameter("client_id", _keycloakAuthenticationOptions.Resource);
+        request.AddParameter("username", username);
+        request.AddParameter("password", password);
+        request.AddParameter("client_secret", _keycloakAuthenticationOptions.Credentials.Secret);
 
-            if (!response.IsSuccessful || response.ContentLength.Equals(0) || response.Content == null)
-                return null;
+        var response = await client.ExecuteAsync(request);
 
-            return JsonConvert.DeserializeObject<AuthenticationResponse>(response.Content);
-        }
+        if (!response.IsSuccessful || response.ContentLength.Equals(0) || response.Content == null)
+            return null;
+
+        return JsonConvert.DeserializeObject<AuthenticationResponse>(response.Content);
     }
 }

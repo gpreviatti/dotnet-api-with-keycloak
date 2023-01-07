@@ -1,7 +1,7 @@
 using System.Security.Claims;
 using Microsoft.AspNetCore.Mvc;
 
-namespace api.Controllers;
+namespace Api.Controllers;
 
 public abstract class BaseController : ControllerBase
 {

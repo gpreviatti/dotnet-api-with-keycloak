@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace api.Controllers;
+namespace Api.Controllers;
 
 [ApiController]
 [Authorize("IsAdmin")]

@@ -1,4 +1,4 @@
-using api.Extensions;
+using Api.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,9 +7,10 @@ var services = builder.Services;
 
 services.AddControllers();
 
-services.AddEndpointsApiExplorer().AddSwaggerGen();
-
-services.AddKeycloakAuthenticationExtension(configuration);
+services
+    .AddEndpointsApiExplorer()
+    .AddSwagger()
+    .AddKeycloakAuthenticationExtension(configuration);
 
 var app = builder.Build();
 

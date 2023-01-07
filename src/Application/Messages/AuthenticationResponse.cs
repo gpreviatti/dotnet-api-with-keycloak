@@ -1,6 +1,6 @@
 using Newtonsoft.Json;
 
-namespace tests.integration;
+namespace Application.Messages;
 
 public class AuthenticationResponse
 {

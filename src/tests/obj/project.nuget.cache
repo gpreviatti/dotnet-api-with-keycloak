@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "xMfda8Orot5fS3xvq5XivD84xXOgMtaDsqysiyQWO7coIuyxNoVDpwTXYZe96LJW47OtVdKc9Qdi5oJHr0HdYA==",
+  "dgSpecHash": "lrzmXGlsPUXPaiPV0i+VmTIf9Cuc6VFb2NPAoQtu/qNI8dBWAQoHJTpxAgDCkaU/3twZ3MzUR8Oa6y2v8wSMeA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\giovanni.previatti\\Projetos\\Outros\\dotnet-api-with-keycloak\\src\\tests\\tests.csproj",
+  "projectFilePath": "C:\\Users\\giovanni.previatti\\Projetos\\Outros\\dotnet-api-with-keycloak\\src\\tests\\Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\giovanni.previatti\\.nuget\\packages\\coverlet.collector\\3.1.2\\coverlet.collector.3.1.2.nupkg.sha512",
     "C:\\Users\\giovanni.previatti\\.nuget\\packages\\identitymodel\\6.0.0\\identitymodel.6.0.0.nupkg.sha512",
@@ -163,13 +163,13 @@
       "code": "NU1803",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "You are running the 'restore' operation with an 'HTTP' source, 'http://nexus.viavarejo.com.br/repository/b2b-nuget/'. Non-HTTPS access will be removed in a future version. Consider migrating to an 'HTTPS' source."
+      "message": "You are running the 'restore' operation with an 'HTTP' source, 'http://nuget.cnova.com/nuget/'. Non-HTTPS access will be removed in a future version. Consider migrating to an 'HTTPS' source."
     },
     {
       "code": "NU1803",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "You are running the 'restore' operation with an 'HTTP' source, 'http://nuget.cnova.com/nuget/'. Non-HTTPS access will be removed in a future version. Consider migrating to an 'HTTPS' source."
+      "message": "You are running the 'restore' operation with an 'HTTP' source, 'http://nexus.viavarejo.com.br/repository/b2b-nuget/'. Non-HTTPS access will be removed in a future version. Consider migrating to an 'HTTPS' source."
     }
   ]
 }

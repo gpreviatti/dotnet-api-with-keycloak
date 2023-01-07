@@ -9,4 +9,4 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = tests
-build_property.ProjectDir = c:\Users\giovanni.previatti\Projetos\Outros\dotnet-api-with-keycloak\src\tests\
+build_property.ProjectDir = C:\Users\giovanni.previatti\Projetos\Outros\dotnet-api-with-keycloak\src\tests\

@@ -1,7 +1,7 @@
 using System.Net;
 using Microsoft.AspNetCore.Mvc.Testing;
 
-namespace tests.integration;
+namespace Tests.Integration;
 
 public class UserControllerTest : IntegrationTestBaseFixture
 {
