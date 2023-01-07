@@ -1,5 +1,4 @@
 using Application.Messages;
-using Keycloak.AuthServices.Authentication;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
@@ -11,7 +10,6 @@ public abstract class IntegrationTestBaseFixture : IClassFixture<WebApplicationF
 {
     protected readonly HttpClient _client;
     protected readonly IConfiguration _configuration;
-    protected readonly KeycloakAuthenticationOptions _keycloakAuthenticationOptions;
 
     public IntegrationTestBaseFixture(WebApplicationFactory<Program> factory)
     {
@@ -19,13 +17,6 @@ public abstract class IntegrationTestBaseFixture : IClassFixture<WebApplicationF
             .SetBasePath(Directory.GetCurrentDirectory())
             .AddJsonFile($"appsettings.json")
             .Build();
-
-        if (_configuration != null)
-        {
-            _keycloakAuthenticationOptions = _configuration
-                .GetSection(KeycloakAuthenticationOptions.Section)
-                .Get<KeycloakAuthenticationOptions>()!;
-        }
 
         _client = factory.CreateClient();
     }

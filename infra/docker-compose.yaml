@@ -1,8 +1,11 @@
 version: '3'
 
+name: dotnet-api-with-keycloak
+
 services:
 
   postgresql:
+    container_name: postgresql
     image: docker.io/bitnami/postgresql:15.1.0
     environment:
       - POSTGRESQL_USERNAME=keycloak
@@ -14,6 +17,7 @@ services:
       - "5432:5432"
 
   keycloak:
+    container_name: keycloak
     image: docker.io/bitnami/keycloak:20.0.2
     ports:
       - "8080:8080"
@@ -26,8 +30,22 @@ services:
 
       - KEYCLOAK_ADMIN_USER=admin
       - KEYCLOAK_ADMIN_PASSWORD=admin
+
+    # command: ['./kc.sh', 'import', '--file', '/tmp/realm-export.json']
+    volumes:
+      - ./imports/realm-export.json:/tmp/realm-export.json
     depends_on:
       - postgresql
+
+  api:
+    container_name: api
+    build:
+        context: ../src/
+        no_cache: true
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Docker
+    ports:
+      - "5259:80"
 
 volumes:
   postgresql_data:

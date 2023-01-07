@@ -1,23 +1,21 @@
-﻿{
-  "$schema": "https://json.schemastore.org/launchsettings.json",
+{
   "profiles": {
-    "http": {
+    "Local": {
       "commandName": "Project",
-      "dotnetRunMessages": true,
-      "launchBrowser": false,
-      "applicationUrl": "http://localhost:5259",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Production"
-      }
+      },
+      "dotnetRunMessages": true,
+      "applicationUrl": "http://localhost:5259"
     },
-    "https": {
+    "Docker": {
       "commandName": "Project",
-      "dotnetRunMessages": true,
-      "launchBrowser": false,
-      "applicationUrl": "https://localhost:7239;http://localhost:5259",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Production"
-      }
+        "ASPNETCORE_ENVIRONMENT": "Docker"
+      },
+      "dotnetRunMessages": true,
+      "applicationUrl": "http://api:5259"
     }
-  }
+  },
+  "$schema": "https://json.schemastore.org/launchsettings.json"
 }

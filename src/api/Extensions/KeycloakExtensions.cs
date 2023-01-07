@@ -11,12 +11,16 @@ public static class KeycloakExtensions
     )
     {
         services.AddKeycloakAuthentication(configuration);
-        services.AddAuthorization(o => o.AddPolicy("IsAdmin", b =>
-        {
-            b.RequireRealmRoles("admin");
-        }));
+        services.AddAuthorization(
+            o => o.AddPolicy("IsAdmin", b => b.RequireRealmRoles(GetRoles()))
+        );
         services.AddKeycloakAuthorization(configuration);
 
         return services;
     }
+
+    // Insert your realm roles here
+    public static string[] GetRoles() => new string[] { 
+        "admin"
+    };
 }

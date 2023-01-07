@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "OSWrO7GghuoCg9LDvcX8YznQyJ6Y8CJHreFvLg1aGMIEhqHM5NIoksEMhRphJXz6w02op91MDlXF4G0+u1gE2Q==",
+  "dgSpecHash": "K3QKNlfzwqaKt5cwVegM77X9mr00qVhGvopGhtGMt+tJaJJR8fj/2n0VGXP6GB+Rb+R4MvWllRpJPbSHK4lEEw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\giovanni.previatti\\Projetos\\Outros\\dotnet-api-with-keycloak\\src\\tests\\Tests.csproj",
+  "projectFilePath": "C:\\Users\\giovanni.previatti\\Projetos\\Outros\\dotnet-api-with-keycloak\\src\\Tests\\Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\giovanni.previatti\\.nuget\\packages\\coverlet.collector\\3.1.2\\coverlet.collector.3.1.2.nupkg.sha512",
     "C:\\Users\\giovanni.previatti\\.nuget\\packages\\identitymodel\\6.0.0\\identitymodel.6.0.0.nupkg.sha512",
@@ -60,6 +60,7 @@
     "C:\\Users\\giovanni.previatti\\.nuget\\packages\\microsoft.openapi\\1.4.3\\microsoft.openapi.1.4.3.nupkg.sha512",
     "C:\\Users\\giovanni.previatti\\.nuget\\packages\\microsoft.testplatform.objectmodel\\17.3.2\\microsoft.testplatform.objectmodel.17.3.2.nupkg.sha512",
     "C:\\Users\\giovanni.previatti\\.nuget\\packages\\microsoft.testplatform.testhost\\17.3.2\\microsoft.testplatform.testhost.17.3.2.nupkg.sha512",
+    "C:\\Users\\giovanni.previatti\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.17.0\\microsoft.visualstudio.azure.containers.tools.targets.1.17.0.nupkg.sha512",
     "C:\\Users\\giovanni.previatti\\.nuget\\packages\\microsoft.win32.primitives\\4.3.0\\microsoft.win32.primitives.4.3.0.nupkg.sha512",
     "C:\\Users\\giovanni.previatti\\.nuget\\packages\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
     "C:\\Users\\giovanni.previatti\\.nuget\\packages\\newtonsoft.json\\9.0.1\\newtonsoft.json.9.0.1.nupkg.sha512",

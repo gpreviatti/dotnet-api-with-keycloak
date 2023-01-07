@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\giovanni.previatti\\Projetos\\Outros\\dotnet-api-with-keycloak\\src\\tests\\Tests.csproj": {}
+    "C:\\Users\\giovanni.previatti\\Projetos\\Outros\\dotnet-api-with-keycloak\\src\\Tests\\Tests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\giovanni.previatti\\Projetos\\Outros\\dotnet-api-with-keycloak\\src\\api\\Api.csproj": {
+    "C:\\Users\\giovanni.previatti\\Projetos\\Outros\\dotnet-api-with-keycloak\\src\\Api\\Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\giovanni.previatti\\Projetos\\Outros\\dotnet-api-with-keycloak\\src\\api\\Api.csproj",
+        "projectUniqueName": "C:\\Users\\giovanni.previatti\\Projetos\\Outros\\dotnet-api-with-keycloak\\src\\Api\\Api.csproj",
         "projectName": "Api",
-        "projectPath": "C:\\Users\\giovanni.previatti\\Projetos\\Outros\\dotnet-api-with-keycloak\\src\\api\\Api.csproj",
+        "projectPath": "C:\\Users\\giovanni.previatti\\Projetos\\Outros\\dotnet-api-with-keycloak\\src\\Api\\Api.csproj",
         "packagesPath": "C:\\Users\\giovanni.previatti\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\giovanni.previatti\\Projetos\\Outros\\dotnet-api-with-keycloak\\src\\api\\obj\\",
+        "outputPath": "C:\\Users\\giovanni.previatti\\Projetos\\Outros\\dotnet-api-with-keycloak\\src\\Api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\giovanni.previatti\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -64,6 +64,10 @@
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[7.0.1, )"
+            },
+            "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
+              "target": "Package",
+              "version": "[1.17.0, )"
             },
             "Refit.HttpClientFactory": {
               "target": "Package",
@@ -235,14 +239,14 @@
         }
       }
     },
-    "C:\\Users\\giovanni.previatti\\Projetos\\Outros\\dotnet-api-with-keycloak\\src\\tests\\Tests.csproj": {
+    "C:\\Users\\giovanni.previatti\\Projetos\\Outros\\dotnet-api-with-keycloak\\src\\Tests\\Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\giovanni.previatti\\Projetos\\Outros\\dotnet-api-with-keycloak\\src\\tests\\Tests.csproj",
+        "projectUniqueName": "C:\\Users\\giovanni.previatti\\Projetos\\Outros\\dotnet-api-with-keycloak\\src\\Tests\\Tests.csproj",
         "projectName": "Tests",
-        "projectPath": "C:\\Users\\giovanni.previatti\\Projetos\\Outros\\dotnet-api-with-keycloak\\src\\tests\\Tests.csproj",
+        "projectPath": "C:\\Users\\giovanni.previatti\\Projetos\\Outros\\dotnet-api-with-keycloak\\src\\Tests\\Tests.csproj",
         "packagesPath": "C:\\Users\\giovanni.previatti\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\giovanni.previatti\\Projetos\\Outros\\dotnet-api-with-keycloak\\src\\tests\\obj\\",
+        "outputPath": "C:\\Users\\giovanni.previatti\\Projetos\\Outros\\dotnet-api-with-keycloak\\src\\Tests\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\giovanni.previatti\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -261,8 +265,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\giovanni.previatti\\Projetos\\Outros\\dotnet-api-with-keycloak\\src\\api\\Api.csproj": {
-                "projectPath": "C:\\Users\\giovanni.previatti\\Projetos\\Outros\\dotnet-api-with-keycloak\\src\\api\\Api.csproj"
+              "C:\\Users\\giovanni.previatti\\Projetos\\Outros\\dotnet-api-with-keycloak\\src\\Api\\Api.csproj": {
+                "projectPath": "C:\\Users\\giovanni.previatti\\Projetos\\Outros\\dotnet-api-with-keycloak\\src\\Api\\Api.csproj"
               },
               "C:\\Users\\giovanni.previatti\\Projetos\\Outros\\dotnet-api-with-keycloak\\src\\Application\\Application.csproj": {
                 "projectPath": "C:\\Users\\giovanni.previatti\\Projetos\\Outros\\dotnet-api-with-keycloak\\src\\Application\\Application.csproj"
