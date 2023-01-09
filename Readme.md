@@ -15,7 +15,7 @@ Prof of concept to test dotnet authentication and authorization with keycloak
 2. Go to clients menu item and click on button `Create client`
     - Cliente type: OpenId Connect
     - Type your Client Id and click in next
-    - Set the options `Client authentication` and Authorization to `On` and click to Save button
+    - Set the options `Client authentication` and `Authorization` to `ON` and click to Save button
 
 3. Go to Client scopes menu item and clic on button `Create client scope`
     - Type the name of your client scope
