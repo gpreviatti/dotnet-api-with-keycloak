@@ -36,7 +36,7 @@ Prof of concept to test dotnet authentication and authorization with keycloak
 
 7. To get your client configuration to use on your application, go to `Clients` select your client and in Action button in the top o right side select the option `Download adapter config`, than copy this information in your appsettings file
 
-## Bckup database
+## Backup your configurations in database
 
 Inside your postgres container performe the following commands
 
