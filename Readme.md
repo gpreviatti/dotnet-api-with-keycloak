@@ -10,7 +10,7 @@ Prof of concept to test dotnet authentication and authorization with keycloak
 
 ## Setup new Realm
 
-1. On top of left side of the menu you should select the active realm and click in the button create new realm, then type the new realm name and click on create.
+1. On top of left side of the menu you should select the active realm and click in the button `create new realm`, then type the new realm name and click on `create`.
 
 2. Go to clients menu item and click on button `Create client`
     - Cliente type: OpenId Connect
