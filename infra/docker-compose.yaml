@@ -12,7 +12,8 @@ services:
       - POSTGRESQL_PASSWORD=keycloak
       - POSTGRESQL_DATABASE=keycloak
     volumes:
-      - 'postgresql_data:/bitnami/postgresql'
+      - './postgresql:/bitnami/postgresql'
+      - './backup:/backup/'
     ports:
       - "5432:5432"
 
@@ -31,9 +32,6 @@ services:
       - KEYCLOAK_ADMIN_USER=admin
       - KEYCLOAK_ADMIN_PASSWORD=admin
 
-    # command: ['./kc.sh', 'import', '--file', '/tmp/realm-export.json']
-    volumes:
-      - ./imports/realm-export.json:/tmp/realm-export.json
     depends_on:
       - postgresql
 

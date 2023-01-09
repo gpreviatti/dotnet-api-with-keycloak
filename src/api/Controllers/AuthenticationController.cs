@@ -28,12 +28,12 @@ public class AuthenticationController : ControllerBase
         return Ok(new AuthenticationResponse
         {
             AccessToken = response.access_token,
-            ExpiresIn= response.expires_in,
+            ExpiresIn = response.expires_in,
             NotBeforePolicy = response.notbeforepolicy,
-            RefreshExpiresIn= response.refresh_expires_in,
-            RefreshToken= response.refresh_token,
-            Scope= response.scope,
-            SessionState= response.session_state,
+            RefreshExpiresIn = response.refresh_expires_in,
+            RefreshToken = response.refresh_token,
+            Scope = response.scope,
+            SessionState = response.session_state,
             TokenType = response.token_type
         });
     }
