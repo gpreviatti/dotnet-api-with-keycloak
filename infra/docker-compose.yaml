@@ -8,12 +8,15 @@ services:
     container_name: postgresql
     image: docker.io/bitnami/postgresql:15.1.0
     environment:
-      - POSTGRESQL_USERNAME=keycloak
-      - POSTGRESQL_PASSWORD=keycloak
-      - POSTGRESQL_DATABASE=keycloak
+      # - POSTGRESQL_USERNAME=keycloak
+      # - POSTGRESQL_PASSWORD=keycloak
+      # - POSTGRESQL_DATABASE=keycloak
+
+      - POSTGRES_PASSWORD=keycloak
+      - POSTGRES_USER=keycloak
+      - POSTGRES_DB=keycloak
     volumes:
       - './postgresql:/bitnami/postgresql'
-      - './backup:/backup/'
     ports:
       - "5432:5432"
 
@@ -32,6 +35,12 @@ services:
       - KEYCLOAK_ADMIN_USER=admin
       - KEYCLOAK_ADMIN_PASSWORD=admin
 
+      - KEYCLOAK_EXTRA_ARGS="-Dkeycloak.profile.feature.upload_scripts=enabled"
+      # - KEYCLOAK_IMPORT=/imports/realm-export.json -Dkeycloak.profile.feature.upload_scripts=enabled
+    
+    volumes:
+      - './imports:/imports'
+
     depends_on:
       - postgresql
 
@@ -46,5 +55,5 @@ services:
       - "5259:80"
 
 volumes:
-  postgresql_data:
+  postgresql:
     driver: local

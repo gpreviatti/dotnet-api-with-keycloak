@@ -43,13 +43,13 @@ Inside your postgres container performe the following commands
 To backup
 
 ``
-pg_dump keycloak > /backup/keycloak
+docker exec -it -u root postgresql pg_dump keycloak > /backup/keycloak
 ``
 
 To Restore
 
 ``
-psql keycloak < /backup/keycloak
+psql -U keycloak keycloak < /backup/keycloak
 ``
 
 [Reference](https://www.postgresql.org/docs/current/backup-dump.html)
