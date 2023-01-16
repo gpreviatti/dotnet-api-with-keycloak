@@ -20,6 +20,8 @@ postgresql/
 mono_crash.*
 
 # Build results
+obj/
+Debug/
 [Dd]ebug/
 [Dd]ebugPublic/
 [Rr]elease/

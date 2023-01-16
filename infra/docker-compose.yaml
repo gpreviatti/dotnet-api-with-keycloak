@@ -7,11 +7,8 @@ services:
   postgresql:
     container_name: postgresql
     image: docker.io/bitnami/postgresql:15.1.0
+    user: root
     environment:
-      # - POSTGRESQL_USERNAME=keycloak
-      # - POSTGRESQL_PASSWORD=keycloak
-      # - POSTGRESQL_DATABASE=keycloak
-
       - POSTGRES_PASSWORD=keycloak
       - POSTGRES_USER=keycloak
       - POSTGRES_DB=keycloak
@@ -35,11 +32,9 @@ services:
       - KEYCLOAK_ADMIN_USER=admin
       - KEYCLOAK_ADMIN_PASSWORD=admin
 
-      - KEYCLOAK_EXTRA_ARGS="-Dkeycloak.profile.feature.upload_scripts=enabled"
-      # - KEYCLOAK_IMPORT=/imports/realm-export.json -Dkeycloak.profile.feature.upload_scripts=enabled
-    
     volumes:
-      - './imports:/imports'
+      - './keycloak/imports:/imports'
+      - './keycloak/configuration:/keycloak/standalone/configuration/'
 
     depends_on:
       - postgresql

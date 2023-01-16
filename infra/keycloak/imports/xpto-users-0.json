@@ -1,0 +1,44 @@
+{
+  "realm" : "xpto",
+  "users" : [ {
+    "id" : "ac7900c6-114a-4566-8b1f-1eb33ac797b1",
+    "createdTimestamp" : 1673869235570,
+    "username" : "giovanni",
+    "enabled" : true,
+    "totp" : false,
+    "emailVerified" : true,
+    "firstName" : "GIOVANNI",
+    "lastName" : "PREVIATTI",
+    "email" : "gpreviatt@gmail.com",
+    "credentials" : [ {
+      "id" : "43d1ae96-a17e-41a9-8ba6-646d11caf097",
+      "type" : "password",
+      "userLabel" : "My password",
+      "createdDate" : 1673869249951,
+      "secretData" : "{\"value\":\"BVCZMQdO2pvIM+Qu+i/zDgOV+psBdYUzkmEmriCBgYf7frleW+I0EDIPsAYodI98vS4gWXVXpyj3aoBIMTTGOQ==\",\"salt\":\"OHmbOJdr6E41DRG+jXUGDA==\",\"additionalParameters\":{}}",
+      "credentialData" : "{\"hashIterations\":27500,\"algorithm\":\"pbkdf2-sha256\",\"additionalParameters\":{}}"
+    } ],
+    "disableableCredentialTypes" : [ ],
+    "requiredActions" : [ "UPDATE_PASSWORD" ],
+    "realmRoles" : [ "default-roles-xpto" ],
+    "notBefore" : 0,
+    "groups" : [ ]
+  }, {
+    "id" : "0c6b05ba-74e6-408f-8ae4-8ab22c7f2dfa",
+    "createdTimestamp" : 1673869285399,
+    "username" : "service-account-api-client",
+    "enabled" : true,
+    "totp" : false,
+    "emailVerified" : false,
+    "serviceAccountClientId" : "api-client",
+    "credentials" : [ ],
+    "disableableCredentialTypes" : [ ],
+    "requiredActions" : [ ],
+    "realmRoles" : [ "default-roles-xpto" ],
+    "clientRoles" : {
+      "api-client" : [ "uma_protection" ]
+    },
+    "notBefore" : 0,
+    "groups" : [ ]
+  } ]
+}
