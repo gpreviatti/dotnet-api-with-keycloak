@@ -8,7 +8,31 @@ Prof of concept to test dotnet authentication and authorization with keycloak
 
 [Blob post reference](https://nikiforovall.github.io/aspnetcore/dotnet/2022/08/24/dotnet-keycloak-auth.html)
 
-## Setup new Realm
+## Run stack
+
+``sh
+cd infra && docker-compose up
+``
+
+## Backup and restore your configurations
+
+Backup
+
+``sh
+cd infra && docker-compose exec keycloak kc.sh export --realm `<your realm name>` --dir /imports
+``
+
+Restore
+
+``sh
+cd infra && docker-compose exec keycloak kc.sh import --dir /imports
+``
+
+[Reference](https://www.keycloak.org/server/importExport#:~:text=To%20export%20a%20realm%2C%20you,started%20when%20invoking%20this%20command.&text=To%20export%20a%20realm%20to,%2D%2Ddir%20option.&text=When%20exporting%20realms%20to%20a,for%20each%20realm%20being%20exported.)
+
+
+<details>
+    <summary>Setup new Realm</sumary>
 
 1. On top of left side of the menu you should select the active realm and click in the button `create new realm`, then type the new realm name and click on `create`.
 
@@ -35,21 +59,28 @@ Prof of concept to test dotnet authentication and authorization with keycloak
 6. By the end go back to Clients menu and in `Client scopes` add your client scope to your client as a Default
 
 7. To get your client configuration to use on your application, go to `Clients` select your client and in Action button in the top o right side select the option `Download adapter config`, than copy this information in your appsettings file
+</details>
 
-## Backup your configurations in database
 
-Inside your postgres container performe the following commands
+## Default credentials
 
-To backup
+Keycloak admin user
 
-``
-docker exec -it -u root postgresql pg_dump keycloak > /backup/keycloak
-``
+```
+login: admin
+password: admin
+```
 
-To Restore
+User with admin role
 
-``
-psql -U keycloak keycloak < /backup/keycloak
-``
+```
+login: giovanni
+password: Change@Me
+```
 
-[Reference](https://www.postgresql.org/docs/current/backup-dump.html)
+User without admin role
+
+```
+login: joao
+password: Change@Me
+```

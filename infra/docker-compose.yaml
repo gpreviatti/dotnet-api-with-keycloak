@@ -34,7 +34,6 @@ services:
 
     volumes:
       - './keycloak/imports:/imports'
-      - './keycloak/configuration:/keycloak/standalone/configuration/'
 
     depends_on:
       - postgresql

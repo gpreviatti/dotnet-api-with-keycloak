@@ -480,3 +480,4 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+src/tests/obj/*

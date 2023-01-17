@@ -20,6 +20,29 @@
     } ],
     "disableableCredentialTypes" : [ ],
     "requiredActions" : [ "UPDATE_PASSWORD" ],
+    "realmRoles" : [ "default-roles-xpto", "admin" ],
+    "notBefore" : 0,
+    "groups" : [ ]
+  }, {
+    "id" : "2c6ee404-ea14-4f9f-8dfc-2bc990c677d0",
+    "createdTimestamp" : 1673956753908,
+    "username" : "joao",
+    "enabled" : true,
+    "totp" : false,
+    "emailVerified" : true,
+    "firstName" : "joao",
+    "lastName" : "joao",
+    "email" : "joao@email.com",
+    "credentials" : [ {
+      "id" : "16cefcc9-b4c3-4f46-82c7-159ab42b02bd",
+      "type" : "password",
+      "userLabel" : "My password",
+      "createdDate" : 1673956765722,
+      "secretData" : "{\"value\":\"KTBZLYsPUk0Oz2K2UpP5EpiopacZGgwvZVN8CeWk0cJlzXc0aUAl1gY6HsWVvifhuDcma/ce/cuTg9Oen3Tqyg==\",\"salt\":\"ycw8BNB7vbTB08E61aLlTg==\",\"additionalParameters\":{}}",
+      "credentialData" : "{\"hashIterations\":27500,\"algorithm\":\"pbkdf2-sha256\",\"additionalParameters\":{}}"
+    } ],
+    "disableableCredentialTypes" : [ ],
+    "requiredActions" : [ ],
     "realmRoles" : [ "default-roles-xpto" ],
     "notBefore" : 0,
     "groups" : [ ]
