@@ -30,8 +30,6 @@ cd infra && docker-compose exec keycloak kc.sh import --dir /imports
 
 [Reference](https://www.keycloak.org/server/importExport#:~:text=To%20export%20a%20realm%2C%20you,started%20when%20invoking%20this%20command.&text=To%20export%20a%20realm%20to,%2D%2Ddir%20option.&text=When%20exporting%20realms%20to%20a,for%20each%20realm%20being%20exported.)
 
-[Setup new realm wiki page](https://github.com/gpreviatti/dotnet-api-with-keycloak/wiki/Setup-new-Realm)
-
 
 ## Default credentials
 
@@ -55,3 +53,5 @@ User without admin role
 login: joao
 password: Change@Me
 ```
+
+[Setup new realm wiki page](https://github.com/gpreviatti/dotnet-api-with-keycloak/wiki/Setup-new-Realm)
