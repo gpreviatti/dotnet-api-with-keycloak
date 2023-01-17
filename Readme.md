@@ -10,23 +10,23 @@ Prof of concept to test dotnet authentication and authorization with keycloak
 
 ## Run stack
 
-``sh
+```sh
 cd infra && docker-compose up
-``
+```
 
 ## Backup and restore your configurations
 
 Backup
 
-``sh
+```sh
 cd infra && docker-compose exec keycloak kc.sh export --realm `<your realm name>` --dir /imports
-``
+```
 
 Restore
 
-``sh
+```sh
 cd infra && docker-compose exec keycloak kc.sh import --dir /imports
-``
+```
 
 [Reference](https://www.keycloak.org/server/importExport#:~:text=To%20export%20a%20realm%2C%20you,started%20when%20invoking%20this%20command.&text=To%20export%20a%20realm%20to,%2D%2Ddir%20option.&text=When%20exporting%20realms%20to%20a,for%20each%20realm%20being%20exported.)
 
