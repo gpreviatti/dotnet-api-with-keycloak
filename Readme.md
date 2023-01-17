@@ -1,4 +1,4 @@
-# Dotnet api With Keycloak Authorization
+# Dotnet api with Keycloak authentication/authorization
 
 Prof of concept to test dotnet authentication and authorization with keycloak
 
